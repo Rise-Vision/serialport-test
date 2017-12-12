@@ -20,6 +20,7 @@ port.on('error', error => {
   console.error(error.message);
 })
 
+port.close();
 port.open();
 
 port.write(dataToSend, function(err)
