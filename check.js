@@ -20,7 +20,7 @@ port.on('error', error => {
   console.error(error.message);
 })
 
-port.close();
+port.close(); // if someone forgot to close it before, this forces close it
 port.open();
 
 port.write(dataToSend, function(err)
@@ -39,5 +39,6 @@ port.write(dataToSend, function(err)
         return console.log('Error on close: ', err.message);
 
       console.log('port closed');
-    }), 5000 )
+    }), 5000
+  )
 });
